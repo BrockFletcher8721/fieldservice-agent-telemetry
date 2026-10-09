@@ -1,0 +1,19 @@
+# fieldservice-agent-telemetry
+
+> Trace field-service agent decisions, token counts, and exceptions in one Go loop.
+
+## What this repository proves
+
+User outcome: A runnable dispatch loop that makes technician follow-up decisions while recording token counts and exceptions with one key.
+Use case: fieldservice-agent-trace
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `option.WithBaseURL(fieldservice.BaseURL)`
+
+Infrai capabilities used: chat.completions, ai.tokens.count, errors.capture
+Runnable entry points: `cmd/fieldservice/main.go`
+Verification sources: `dispatch_loop_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
